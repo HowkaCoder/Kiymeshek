@@ -1,0 +1,24 @@
+version: '3'
+services:
+  api:
+    build: .
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+    environment:
+      - DB_USERNAME=new_user
+      - DB_PASSWORD=uE9KqY4xj6#3
+      - DB_NAME=blog
+      - DB_HOST=db
+      - DB_PORT=3306
+  db:
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=blog
+      - MYSQL_USER=new_user
+      - MYSQL_PASSWORD=uE9KqY4xj6#3
+    ports:
+      - 3306:3306
+
