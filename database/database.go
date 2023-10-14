@@ -2,12 +2,9 @@ package database
  
 import ( 
  "fmt" 
- "go-auth/config" 
  "go-auth/models" 
- "log" 
- "strconv" 
- 
- "gorm.io/driver/mysql" 
+ "log"  
+ "gorm.io/driver/postgres" 
  "gorm.io/gorm" 
 ) 
  
@@ -15,14 +12,9 @@ var DB *gorm.DB
  
 func ConnectToDB() { 
  var err error 
- p := config.Config("DB_PORT") 
- port, err := strconv.ParseUint(p, 10, 32) 
- if err != nil { 
-  log.Fatal(err) 
- } 
- dsn := fmt.Sprintf("%s:%s@tcp(192.168.88.126:%d)/%s?charset=utf8mb4&parseTime=true&loc=Local", config.Config("DB_USERNAME"), config.Config("DB_PASSWORD"), port, config.Config("DB_NAME")) 
- 
- DB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{}) 
+ dsn := "host=192.168.88.126 user=howka password=euF@I16TuradPUXF dbname=kiymeshek port=3306 sslmode=disable TimeZone=Asia/Shanghai"
+
+ DB, err = gorm.Open(postgres.Open(dsn), &gorm.Config{}) 
  if err != nil { 
   log.Fatal(err) 
  } 
