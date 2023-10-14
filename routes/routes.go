@@ -31,6 +31,10 @@ func SetupRoutes(app *fiber.App){
 	})
   
 
+  app.Get("auto_migrate" , func(c *fiber.Ctx) error {
+	database.ConnectToDB()
+	return c.SendString("Database migrated")
+  })
 
   app.Post("/register", controllers.Register)
   app.Post("/login" ,controllers.Login)

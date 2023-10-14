@@ -7,18 +7,18 @@ services:
     depends_on:
       - db
     environment:
-      - DB_USERNAME=new_user
-      - DB_PASSWORD=uE9KqY4xj6#3
-      - DB_NAME=blog
-      - DB_HOST=db
+      - DB_USERNAME=k6bvq3m7gt68c3ufqzms
+      - DB_PASSWORD=pscale_pw_nq2WLXxz1Bge9Wa9vYzvGRPZga2m8DP526QPoNEFvtc
+      - DB_NAME=kiymeshek
+      - DB_HOST=aws.connect.psdb.cloud
       - DB_PORT=3306
   db:
     image: mysql:latest
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=blog
-      - MYSQL_USER=new_user
-      - MYSQL_PASSWORD=uE9KqY4xj6#3
+      - MYSQL_DATABASE=kiymeshek
+      - MYSQL_USER=k6bvq3m7gt68c3ufqzms
+      - MYSQL_PASSWORD=pscale_pw_nq2WLXxz1Bge9Wa9vYzvGRPZga2m8DP526QPoNEFvtc
     ports:
       - 3306:3306
 

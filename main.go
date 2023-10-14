@@ -17,7 +17,7 @@ func main(){
 
   database.ConnectToDB()
   routes.SetupRoutes(app)
-  if err := app.Listen(":3000"); err != nil {
+  if err := app.Listen("0.0.0.0:8080"); err != nil {
     log.Fatal(err)
   }
 
