@@ -8,7 +8,7 @@ import (
 	"strconv"
 
 	"gorm.io/driver/mysql"
-	"gorm.io/gorm"
+		"gorm.io/gorm"
 )
 
 var DB *gorm.DB
@@ -20,7 +20,7 @@ func ConnectToDB() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	dsn := fmt.Sprintf("%s:%s@tcp(containers-us-west-163.railway.app:%d)/%s?charset=utf8mb4&parseTime=true&loc=Local", config.Config("DB_USERNAME"), config.Config("DB_PASSWORD"), port, config.Config("DB_NAME"))
+	dsn := fmt.Sprintf("%s:%s@tcp(monorail.proxy.rlwy.net:%d)/%s?charset=utf8mb4&parseTime=true&loc=Local", config.Config("DB_USERNAME"), config.Config("DB_PASSWORD"), port, config.Config("DB_NAME"))
 
 	DB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {

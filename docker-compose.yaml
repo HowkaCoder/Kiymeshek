@@ -8,10 +8,10 @@ services:
       - db
     environment:
       - DB_USERNAME=root
-      - DB_PASSWORD=npvfuZ7w8t36bq7bRHie
+      - DB_PASSWORD=--F15FEf3FCD-gB5F-baF3BedH3CBab5
       - DB_NAME=railway
-      - DB_HOST=containers-us-west-163.railway.app
-      - DB_PORT=7715
+      - DB_HOST=monorail.proxy.rlwy.net
+      - DB_PORT=47926
   db:
     image: mysql:latest
     environment:
